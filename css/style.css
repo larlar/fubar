@@ -1,0 +1,182 @@
+/*
+ *
+ *  RESET
+ *  A more considered reset; more of a restart...
+ *  http://csswizardry.com/2011/10/reset-restarted/
+ *
+ */
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,hr,
+a,abbr,address,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,
+small,strong,sub,sup,tt,var,
+b,u,i,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary,
+time,mark,audio,video{
+	margin:0;
+	padding:0;
+}
+article,aside,details,figcaption,figure,footer,
+header,hgroup,menu,nav,section{
+	display:block;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size:100%;
+}
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+strong,b,mark{
+	font-weight:bold;
+	font-style:inherit;
+}
+em,i,cite,q,address,dfn,var{
+	font-style:italic;
+	font-weight:inherit;
+}
+abbr[title],dfn[title]{
+	cursor:help;
+	border-bottom:1px dotted;
+}
+ins{
+	border-bottom:1px solid;
+}
+a,u,ins{
+	text-decoration:none;
+}
+del,s{
+	text-decoration:line-through;
+}
+pre,code,samp,kbd{
+	font-family:monospace;
+}
+small{
+	font-size:0.75em;
+}
+img{
+	border:none;
+	font-style:italic;
+}
+input,
+select,
+textarea{
+	font:inherit;
+}
+
+/*
+ *
+ *  Clearfix
+ *  nicolasgallagher.com/micro-clearfix-hack 
+ *
+ */
+
+/* For modern browsers */
+.cf:before,.cf:after {
+	content:"";
+	display:table;
+}
+
+.cf:after {
+	clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+	zoom:1;
+}
+
+/*
+ *
+ *  Base
+ *
+ */
+
+body {
+	background: #fff;
+	color: #343434;
+	font: 20px/1.5 normal Helvetica, Arial, Sans-serif;
+	margin: 0 1rem;
+}
+
+/*
+ *
+ *  Header
+ *
+ */
+
+header h1 {
+	font-size: 3rem;
+	line-height: 1.2;
+	display: inline-block;
+}
+
+header span {
+	float: right;
+	display: inline-block;
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+/*
+ *
+ *  Content
+ *
+ */
+
+section {
+	display: block;
+	float: left;
+}
+
+.news {
+	float: left;
+	margin-bottom: 1.5rem;
+}
+
+.instagramfeed {
+	float: right;
+	width: 900px;
+}
+
+.soundrop {
+	float: left;
+	width: 952px;
+}
+#ticker span {
+	font-size: 20px;
+}
+#ticker ul.tweet_list {
+    height: 6em;
+    overflow-y:hidden;
+}
+#ticker .tweet_list li {
+    height: 4em;
+}
+#ticker a {
+	border-bottom: none;
+}
+
+iframe {
+	border: none;
+	overflow: hidden;
+}
+
+.instagram-placeholder {
+	display: inline-block;
+}
+
+	.instagram-placeholder img {
+		width: 171px;
+		margin-right: 0.5rem;
+	}
+
+	.instagram-placeholder:nth-of-type(1) img,
+	.instagram-placeholder:nth-of-type(2) img {
+		width: 440px;
+	}
+

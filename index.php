@@ -1,0 +1,110 @@
+<!DOCTYPE HTML> 
+<html lang=en>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>#fuBar</title>
+
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, print" />
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+	<!-- https://github.com/potomak/jquery-instagram -->
+	<script src="js/jquery.instagram.js"></script>
+
+	<!-- http://www.dreamtemplate.com/dreamcodes/documentation/tweet.html -->
+	<link href="css/jquery.tweet.css" rel="stylesheet">
+	 
+	<!-- http://www.dreamtemplate.com/dreamcodes/documentation/tweet.html -->
+	<script src="js/jquery.tweet.js" charset="utf-8"></script>
+
+	<script src="js/cssrefresh.js"></script>
+
+	<script>
+	function printCurrentTime() {
+		var date = new Date();
+		var minutes = date.getMinutes();
+		var seconds = date.getSeconds();
+		if (parseInt(minutes)<10) {
+			minutes = '0'+minutes;
+		}
+		if (parseInt(seconds)<10) {
+			seconds = '0'+seconds;
+		}
+		var s = date.getHours() +':'+minutes+':'+seconds;
+		document.getElementById('clock').innerHTML = s;
+	}
+	
+	setInterval(printCurrentTime, 1000);
+	
+	</script>
+
+	<script type="text/JavaScript">
+	function timedRefresh(timeoutPeriod) {
+		setTimeout("location.reload(true);",timeoutPeriod);
+	}
+	</script>
+</head>
+<body onload="JavaScript:timedRefresh(360000);">
+
+	<header>
+		<h1>#fuBar</h1>
+		<span id="clock"></span>
+	</header>
+	<section class="news">
+		<h2>Newsfeed</h2>
+	<div id="ticker" class="query"></div>
+
+	</section>
+	<section class="instagramfeed">
+		<h2>Instagram feed (#fubarNITH)<h2>
+		<div class="instagram">
+		</div>
+	</section>
+	<section class="soundrop">
+		<h2>Spilleliste</h2>
+		<iframe src="http://play.soundrop.fm/s/WcVleqjcM9glQuNP" width="952px" height="975px" marginheight="-50px"></iframe>
+	</section>
+
+
+<!-- DC Twitter Settings -->
+<script type="text/javascript">
+jQuery(function ($) {
+	$("#ticker").tweet({
+		username: "fubarNITH", // define your twitter username
+		page: 1,
+		avatar_size: 32, // avatar size in px
+		count: 5, // how many tweets to show
+		loading_text: "loading ..."
+	}).bind("loaded", function () {
+		var ul = $(this).find(".tweet_list");
+		var ticker = function () {
+				setTimeout(function () {
+					ul.find('li:first').animate({
+						marginTop: '-4em'
+					}, 500, function () {
+						$(this).detach().appendTo(ul).removeAttr('style');
+					});
+					ticker();
+				}, 5000); // duration before next tick (4000 = 4 secs)
+			};
+		ticker();
+	});
+});
+</script>
+
+<!-- Instagram -->
+<script> 
+$(function() {
+	$(".instagram").instagram({
+		hash: 'fubarNITH'
+		, clientId: '047ba6d8fa104d29b66a966e98022ab9'
+		, show: 18
+		, image_size: 'standard_resolution'
+	});
+});
+</script>
+
+</body>
+</html>
