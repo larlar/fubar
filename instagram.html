@@ -1,0 +1,74 @@
+<!DOCTYPE HTML> 
+<html lang=en>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>#fuBar</title>
+
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, print" />
+	<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+	<!-- https://github.com/potomak/jquery-instagram -->
+	<script src="js/jquery.instagram.js"></script>
+
+	<!-- http://www.dreamtemplate.com/dreamcodes/documentation/tweet.html -->
+	<link href="css/jquery.tweet.css" rel="stylesheet">
+	 
+	<!-- http://www.dreamtemplate.com/dreamcodes/documentation/tweet.html -->
+	<script src="js/jquery.tweet.js" charset="utf-8"></script>
+
+	<script src="js/cssrefresh.js"></script>
+
+	<script>
+	function printCurrentTime() {
+		var date = new Date();
+		var minutes = date.getMinutes();
+		var seconds = date.getSeconds();
+		if (parseInt(minutes)<10) {
+			minutes = '0'+minutes;
+		}
+		if (parseInt(seconds)<10) {
+			seconds = '0'+seconds;
+		}
+		var s = date.getHours() +':'+minutes+':'+seconds;
+		document.getElementById('clock').innerHTML = s;
+	}
+	
+	setInterval(printCurrentTime, 1000);
+	
+	</script>
+
+	<script type="text/JavaScript">
+	function timedRefresh(timeoutPeriod) {
+		setTimeout("location.reload(true);",timeoutPeriod);
+	}
+	</script>
+</head>
+<body onload="JavaScript:timedRefresh(360000);" class="instagram-only">
+
+	<header>
+		<h1>#fuBar</h1>
+		<span id="clock"></span>
+	</header>
+	<section class="instagramfeed-full">
+		<h2>Instagram feed (#fubarNITH)<h2>
+		<div class="instagram">
+		</div>
+	</section>
+
+<!-- Instagram -->
+<script> 
+$(function() {
+	$(".instagram").instagram({
+		hash: 'fubarNITH'
+		, clientId: '047ba6d8fa104d29b66a966e98022ab9'
+		, show: 21
+		, image_size: 'standard_resolution'
+	});
+});
+</script>
+
+</body>
+</html>
